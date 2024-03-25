@@ -1,0 +1,63 @@
+#main1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f7f7f7; /* Background color for the entire page */
+  }
+  
+  .form1 {
+    background-color: #fff; /* Background color for the form */
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow effect */
+    width: 400px;
+  }
+  
+  .head {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .head h1 {
+    color: #333; /* Header text color */
+  }
+  
+  .form1-bottom {
+    margin-top: 20px;
+  }
+  
+  .form2-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #4caf50; /* Button background color */
+    color: #fff; /* Button text color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition effect */
+  }
+  
+  .form2-btn:hover {
+    background-color: #45a049; /* Button background color on hover */
+  }
+  
+  .but2 {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .but2 p {
+    margin-bottom: 10px;
+    color: #888; /* Text color for 'already have an account' */
+  }
+  
+  .but2 a {
+    text-decoration: none;
+    color: #4caf50; /* Link color for 'login' */
+  }
+  
+  .but2 a:hover {
+    text-decoration: underline;
+  }
+  
