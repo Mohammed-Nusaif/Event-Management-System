@@ -18,13 +18,13 @@ const LoggedInContext = createContext();
 const Myeventcrud = createContext();
 const Myemail = createContext();
 export const Myusername = createContext() ;
+export const Mypassword = createContext()
 function App() {
   const [eventdata, seteventData] = useState([]);
-  const [Email, setEmail] = useState(localStorage.getItem("email") || "");;
+  const [Email, setEmail] = useState("");;
   const [username, setUsername] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(!!localStorage.getItem("token"));
-
-  
+  const [Password, setPassword] = useState( "");  
   return (
     <div className="App">
 
@@ -32,6 +32,7 @@ function App() {
         <Myeventcrud.Provider value={[eventdata, seteventData]}>
           <Myemail.Provider value={[Email,setEmail]}>
           <Myusername.Provider value={[username, setUsername]}>
+          <Mypassword.Provider value={[Password, setPassword]}>
           <BrowserRouter>
             <Routes>
               
@@ -56,6 +57,7 @@ function App() {
               <Route path='/Deletepage/:id' element={<Delete/>}/>
             </Routes>
           </BrowserRouter>
+          </Mypassword.Provider>
           </Myusername.Provider>
           </Myemail.Provider>
         </Myeventcrud.Provider>

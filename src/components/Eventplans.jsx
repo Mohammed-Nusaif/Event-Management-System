@@ -13,7 +13,7 @@ function Eventplans() {
 
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:4000/vieweventitems');
+        const response = await axios.get('http://localhost:5000/viewevent');
         if (isMounted) {
           seteventData(response.data);
         }
@@ -67,7 +67,7 @@ function Eventplans() {
                   
                   <Link to={`/Deletepage/${display._id}` }>
                     <button  className="btn1">
-                      Cancel
+                      Delete
                     </button>
                   </Link>
               </td>

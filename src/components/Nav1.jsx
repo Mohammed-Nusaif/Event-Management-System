@@ -3,21 +3,39 @@ import Logo from "../assets/logo (3).png";
 import { Button } from "react-bootstrap";
 import "../CSS/nav1.css";
 import { Link } from "react-router-dom";
-import { LoggedInContext, Myemail, Myname, Myusername } from "../App";
+import { LoggedInContext, Myemail, Myname, Mypassword, Myusername } from "../App";
 import { FaRegUserCircle, FaUserCircle } from "react-icons/fa";
+import axios from "axios";
 
 function Nav1() {
   const [isLoggedIn, setIsLoggedIn] = useContext(LoggedInContext);
-  const [Email, setEmail] = useContext(Myemail);
   const [username, setUsername] = useContext(Myusername);
 
-  console.log(Email);
-
+ 
+  //setting up profile
   useEffect(() => {
-    // Retrieve username from local storage when component mounts
-    setUsername(localStorage.getItem("username") || "");
-  }, []);
-  
+    const token = localStorage.getItem('token');
+    console.log(token);
+    if (token) {
+      const fetchUserName = async () => {
+        try {
+          const response = await axios.get('http://localhost:5000/getname', {
+            headers: {
+              Authorization: `Bearer ${token}`
+            }
+          });
+          const { name } = response.data;
+          console.log(name);
+          setUsername(name);
+        } catch (error) {
+          console.error('Error fetching user name:', error);
+        }
+      };
+      fetchUserName();
+    }
+  }, [setUsername]); // Fetch user name every time the location changes
+console.log(username);
+
   return (
     <>
       <section id="nav">

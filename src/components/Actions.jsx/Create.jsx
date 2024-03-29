@@ -13,17 +13,19 @@ function Create() {
   
     const [input, setInput] = useState({
       Name: "",
-      Amount: "",
+      booked_date: "",
       venue: "",
+      event_date:""
     });
   
     async function createItem(event) {
       event.preventDefault();
       
       try {
-        const response = await axios.post('http://localhost:4000/createevent', input);
+        const response = await axios.post('http://localhost:5000/createcrud', input);
         const newdata = response.data;
         seteventData([...eventdata, newdata]);
+        console.log(seteventData);
         navigate(-1);
         setShowToast(true);
         setToastMessage("Item created successfully.");

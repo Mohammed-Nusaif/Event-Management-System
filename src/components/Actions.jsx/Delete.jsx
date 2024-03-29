@@ -12,10 +12,10 @@ function Delete() {
 
   async function deletedata() {
     try {
-      await axios.delete(`http://localhost:4000/deleteevent/${id}`);
+      await axios.delete(`http://localhost:5000/deletecrud/${id}`);
       const updatedData = data.filter((item) => item._id !== id);
       setData(updatedData);
-      nav('/');
+      nav('/Bookplans');
     } catch (error) {
       console.error('Error deleting data:', error);
     }

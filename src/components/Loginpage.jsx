@@ -1,36 +1,40 @@
 import axios from "axios";
 import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { LoggedInContext, Myemail, Myusername } from "../App";
+import { LoggedInContext, Myemail, Mypassword, Myusername } from "../App";
 import { Col, Form, InputGroup } from "react-bootstrap";
 import '../CSS/loginpage.css'
+import { jwtDecode } from "jwt-decode";
+
 
 function Loginpage() {
-  const [Password, setPassword] = useState("");
+  // const [Password, setPassword] = useState("");
+  const [Password, setPassword] = useContext(Mypassword) 
   const [loginError, setLoginError] = useState("");
   const [Email, setEmail] = useContext(Myemail);
   const [, setIsLoggedIn] = useContext(LoggedInContext);
-  const [, setUsername] = useContext(Myusername); //
+  const [username, setUsername] = useContext(Myusername); //
   const land = useNavigate();
 
   const handlelogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:4000/login", {
+      const response = await axios.post("http://localhost:5000/login", {
         Password,
         Email,
       });
       const token = response.data.Token;
-      const username = response.data.username;
+      localStorage.setItem("token", token);
+      console.log(token);
+      // Decode the token to get user information
+      
+      const decodedToken = jwtDecode(token); 
+      console.log(decodedToken);
       setIsLoggedIn(true);
-      localStorage.setItem("token", response.data.Token);
-      localStorage.setItem("Email", response.data.Email);
-      localStorage.setItem("username", response.data.username);
-      setEmail(response.data.Email)
-      setUsername(response.data.username)
+
+
       land("/");
-      alert("login successful")
-      console.log(token,Password,Email);
+      alert("login successful");
     } catch (error) {
       if (error.response && error.response.status === 401) {
         console.log("Unauthorized: Invalid credentials");

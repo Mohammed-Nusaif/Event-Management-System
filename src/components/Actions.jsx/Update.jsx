@@ -22,15 +22,15 @@ function Update() {
     async function UpdateItem(event,_id) {
         event.preventDefault();
         try {
-            const response = await axios.put(`http://localhost:4000/updateevent/${id}`, input);
+            const response = await axios.put(`http://localhost:5000/updatecrud/${id}`,input);
     
             setdatas(prevData => {
                 const newData = [...prevData];
                 newData[id] = { ...input }; 
                 return newData;
             });
-            navigate("/");
-        } catch (error) {
+            navigate("/Bookplans");
+        } catch (error) {   
             console.error("not updated:", error);
         }
     }
