@@ -46,9 +46,10 @@ function Create() {
   
   return (
     <div>
-      <Form onSubmit={createItem}>
+      <Form onSubmit={createItem} className="custom-form">
         <Form.Group className="mb-3" controlId="formBasicUsername">
           <Form.Control
+          className="input-field"
             type="date"
             placeholder="Booked Date"
             name="booked_date"
@@ -58,19 +59,26 @@ function Create() {
           />
         </Form.Group>
 
-        <Form.Group className="mb-3">
-          <Form.Control
-            type="text"
-            placeholder="Event Name"
-            name="Name"
-            value={input.Name}
-            onChange={handleChange}
-            required
-          />
-        </Form.Group>
+         <Form.Select
+          aria-label="Default select example"
+          className="input-field"
+          name="Name"
+          value={input.venue}
+          onChange={handleChange}
+          required
+        >
+          <option>Select the Event</option>
+          <option value="Marriage Function">Marriage Function</option>
+          <option value="College Function">College Function</option>
+          <option value="Office Function">Office Function </option>
+          <option value="Festivals">Festivals </option>
+          <option value="Funerals">Funerals </option>
+          <option value="Political Function">Political Function</option>
+        </Form.Select>
 
         <Form.Group className="mb-3">
           <Form.Control
+          className="input-field"
             type="text"
             placeholder="Enter venue"
             name="venue"
@@ -81,6 +89,7 @@ function Create() {
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicUsername">
           <Form.Control
+          className="input-field"
             type="date"
             placeholder="Event Date"
             name="event_date"
@@ -89,7 +98,7 @@ function Create() {
             required
           />
         </Form.Group>
-        <Button variant="primary" type="submit">
+        <Button type="submit" className= "create_btn">
           Add event
         </Button>
       </Form>

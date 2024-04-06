@@ -31,6 +31,8 @@ width: 100%;
 #nav .middle ul{
     display: flex;
     align-items: center;
+    margin: 0;
+
 }
 
 #nav .middle ul li{
@@ -65,8 +67,59 @@ width: 100%;
     background: linear-gradient(to right, #360033, #0b8793);
         border-radius: 5px;
         border : none;
+        margin: 0;
+        padding: 5px 20px;
+        
 }
 .user-icon{
+    position: relative;
+    cursor: pointer;
     font-size: 35px;
     margin-right: 10px;
+}
+.profile{
+    width: 100px;
+    color: #fff;
+
+}
+.logout{
+    display: flex;
+    width: 250px;
+    height: 250px;
+    background-color: #1d1f1f;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+    color: #fff;
+    position: absolute;
+    top: calc(16% + -62px);
+    right: 30px;
+    border-radius: 15px;
+}
+
+.logout .icon-bg{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    background-color: #19293e;
+    z-index: 0;
+    border-radius: 15px 15px 0 0;
+}
+.logout .btn{
+    background: linear-gradient(to right, #360033, #0b8793);
+    border-radius: 5px;
+    border : none;
+    margin: 0;
+    padding: 5px 20px;
+    width: 100px;
+    color: #fff;
+}
+.logout .user-icon{
+    position: relative;
+    top: 21px;
+    font-size: 50px;
+}
+.userprofile{
+    list-style: none;
 }

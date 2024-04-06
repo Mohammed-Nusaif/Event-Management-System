@@ -1,7 +1,111 @@
-.btn1{
-    background: linear-gradient(to right, #360033, #0b8793);
-    padding: 5px 20px;
-    color: #fff;
-    border-radius: 5px;
-    margin-right: 10px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+#dashboard{
+    display: flex;
+    width: 100%;
+}
+.link{
+    color: inherit;
+    text-decoration: none;
+}
+.btn1 {
+  background: linear-gradient(to right, #360033, #0b8793);
+  padding: 5px 20px;
+  color: #fff;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+/* table */
+#dashboard .tab{
+    display: flex;
+    flex-direction: column;
+    width: 88%;
+}
+#event_tab {
+    background: #0b8793;
+}
+.tab .tab_icon{
+    font-size: 18px;
+}
+.tab .edit{
+    margin-right: 15px;
+
+}
+.tab .delete{
+    color: rgba(255, 0, 0, 0.838);
+}
+.tab .create{
+    color: rgb(24, 219, 30);
+    font-size: 25px;
+    text-align: right;
+}
+.tab .create_link{
+    text-align: right;
+    margin-right: 15px;
+
+}
+
+
+
+/* sidebar */
+.side_nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  width: 15%;
+  height: 100svh;
+  background: #0b8793;
+  color: #fff;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .logo {
+  width: 100px;
+}
+.header .logo img {
+  width: 100%;
+}
+.middle_nav {
+  display: flex;
+  flex-direction: column;
+  height: 65%;
+  margin-top: 50px;
+  text-align: left;
+  list-style: none;
+}
+.middle_nav .icons {
+  margin: 10px;
+}
+.middle_nav .nav_list {
+    list-style: none;
+  cursor: pointer;
+  font-size: 18px;
+  margin-top: 25px;
+}
+.middle_nav .nav_list:hover {
+  background: #360033;
+}
+
+.footer_nav {
+  text-align: left;
+  font-size: 18px;
+  align-items: center;
+}
+.footer_nav li {
+  margin-bottom: 25px;
+}
+.footer_nav .icons {
+  margin-right: 15px;
+  margin: 10px;
+
+}
+.footer_nav li:hover {
+  background: #360033;
 }

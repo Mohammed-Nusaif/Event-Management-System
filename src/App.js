@@ -14,9 +14,9 @@ import Delete from "./components/Actions.jsx/Delete";
 import PrivateRoute from "./components/Adminsection/PrivateRouter";
 import Adminpanel from "./components/Adminsection/Adminpanel";
 
-const LoggedInContext = createContext();
-const Myeventcrud = createContext();
-const Myemail = createContext();
+export const LoggedInContext = createContext();
+export const Myeventcrud = createContext();
+export const Myemail = createContext();
 export const Myusername = createContext() ;
 export const Mypassword = createContext()
 function App() {
@@ -67,4 +67,4 @@ function App() {
 }
 
 export default App;
-export { LoggedInContext , Myeventcrud,Myemail};
+
